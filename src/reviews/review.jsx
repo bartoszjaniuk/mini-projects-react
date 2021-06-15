@@ -41,7 +41,7 @@ const Review = () => {
   }, []);
 
   return (
-    <article className="review__article">
+    <div className="review__article">
       <div className="review__img-container">
         <img
           src={people[index]?.image}
@@ -63,7 +63,7 @@ const Review = () => {
           <FaChevronRight onClick={nextSlide} />
         </button>
       </div>
-    </article>
+    </div>
   );
 };
 

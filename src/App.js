@@ -9,12 +9,12 @@ import SliderPage from "./slider/slider-page";
 
 const App = () => {
   // return <ReviewsPage />;
-  return <AccordionPage />;
+  // return <AccordionPage />;
   // return <RestaurantMenuPage />;
   // return <SixTabsMenuPage />;
   // return <SliderPage />;
   // return <LoremGeneratorPage />;
-  // return <ColorGeneratorPage />;
+  return <ColorGeneratorPage />;
 };
 
 export default App;

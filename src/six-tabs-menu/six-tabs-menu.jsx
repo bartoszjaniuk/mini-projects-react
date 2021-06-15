@@ -55,7 +55,7 @@ const SixTabsMenu = () => {
               );
             })}
           </div>
-          <article className="six-tabs__job-info">
+          <div className="six-tabs__job-info">
             <h3>{title}</h3>
             <h4>{company}</h4>
             <p className="six-tabs__job-date">{dates}</p>
@@ -67,7 +67,7 @@ const SixTabsMenu = () => {
                 </div>
               );
             })}
-          </article>
+          </div>
         </div>
       </div>
     </section>

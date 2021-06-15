@@ -26,7 +26,7 @@ const RestaurantMenu = () => {
   };
   return (
     <div>
-      <section className="menu restaurant-section">
+      <div className="menu restaurant-section">
         <div className="menu__title">
           <h2>Menu</h2>
           <div className="menu__underline"></div>
@@ -37,7 +37,7 @@ const RestaurantMenu = () => {
           searchItems={searchItems}
         />
         <MenuItems items={menu} />
-      </section>
+      </div>
     </div>
   );
 };

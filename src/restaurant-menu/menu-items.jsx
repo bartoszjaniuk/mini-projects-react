@@ -7,7 +7,7 @@ const MenuItems = ({ items }) => {
       {items.map((item) => {
         const { id, title, img, desc, price } = item;
         return (
-          <article key={id} className="menu-item">
+          <div key={id} className="menu-item">
             <div className="photo-container">
               <img src={img} alt={title} className="photo" />
             </div>
@@ -19,7 +19,7 @@ const MenuItems = ({ items }) => {
               </header>
               <p className="item-text">{desc}</p>
             </div>
-          </article>
+          </div>
         );
       })}
     </div>

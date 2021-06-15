@@ -110,9 +110,10 @@ Variables
 }
 .color {
   padding: 1rem 2rem;
-  cursor: pointer;
+
   font-size: 1rem;
   text-transform: none;
+  position: relative;
 }
 .percent-value {
   margin-bottom: 0;
@@ -144,4 +145,25 @@ Variables
 }
 .error {
   border: 2px solid var(--clr-red-dark);
+}
+
+.copy-button {
+  width: 20px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  cursor: pointer;
+}
+
+.copy-btn {
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }
