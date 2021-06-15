@@ -4,11 +4,11 @@ import { FiPlus, FiMinus } from "react-icons/fi";
 const SinglePlanet = ({ name, population, terrain, gravity }) => {
   const [showDescription, setShowDescription] = useState(false);
   return (
-    <article className="question">
+    <div className="question">
       <header>
         <h4>{name}</h4>
         <button
-          className="btn"
+          className="accordion__btn"
           onClick={() => setShowDescription(!showDescription)}
         >
           {!showDescription ? <FiPlus /> : <FiMinus />}
@@ -21,7 +21,7 @@ const SinglePlanet = ({ name, population, terrain, gravity }) => {
           <p>Gravity: {gravity}</p>
         </>
       )}
-    </article>
+    </div>
   );
 };
 

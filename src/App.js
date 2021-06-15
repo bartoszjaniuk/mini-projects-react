@@ -9,7 +9,7 @@ import SliderPage from "./slider/slider-page";
 
 const App = () => {
   // return <ReviewsPage />;
-  // return <AccordionPage />;
+  return <AccordionPage />;
   // return <RestaurantMenuPage />;
   // return <SixTabsMenuPage />;
   // return <SliderPage />;

@@ -5,9 +5,13 @@ const Accordion = () => {
   const [planets, setPlanets] = useState([]);
   const url = "https://swapi.dev/api/planets/";
   const fetchStarWarsPlanets = async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-    setPlanets(data.results);
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setPlanets(data.results);
+    } catch (error) {
+      alert(error);
+    }
   };
 
   useEffect(() => {
@@ -16,11 +20,11 @@ const Accordion = () => {
   }, []);
   return (
     <main className="main">
-      <div className="container">
+      <div className="accordion__container">
         <h3>Star Wars 🪐 from SWAPI </h3>
         <section className="info">
-          {planets.map((planet) => {
-            return <SinglePlanet key={planet.id} {...planet} />;
+          {planets.map((planet, index) => {
+            return <SinglePlanet key={index} {...planet} />;
           })}
         </section>
       </div>
