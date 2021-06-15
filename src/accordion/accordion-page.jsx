@@ -1,5 +1,6 @@
 import React from "react";
 import Accordion from "./accordion";
+import "./accordion.styles.scss";
 
 const AccordionPage = () => {
   return (

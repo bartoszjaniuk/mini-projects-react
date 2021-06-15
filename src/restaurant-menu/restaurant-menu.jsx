@@ -25,11 +25,11 @@ const RestaurantMenu = () => {
     setMenu(searchItem);
   };
   return (
-    <main>
-      <section className="menu section">
-        <div className="title">
+    <div>
+      <section className="menu restaurant-section">
+        <div className="menu__title">
           <h2>Menu</h2>
-          <div className="underline"></div>
+          <div className="menu__underline"></div>
         </div>
         <Categories
           filterItems={filterItems}
@@ -38,7 +38,7 @@ const RestaurantMenu = () => {
         />
         <MenuItems items={menu} />
       </section>
-    </main>
+    </div>
   );
 };
 

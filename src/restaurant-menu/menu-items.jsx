@@ -3,7 +3,7 @@ import "./restaurant-menu.styles.scss";
 
 const MenuItems = ({ items }) => {
   return (
-    <div className="section-center">
+    <div className="menu__section-center">
       {items.map((item) => {
         const { id, title, img, desc, price } = item;
         return (

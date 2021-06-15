@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import data from "./data";
-import "./lorem.styles.scss";
 
 const LoremGenerator = () => {
   const [number, setNumber] = useState(0);
@@ -33,9 +32,9 @@ const LoremGenerator = () => {
   };
 
   return (
-    <section className="section-center-lorem">
+    <section className="lorem__section-center">
       <h3>tired of boring lorem ipsum?</h3>
-      <form className="lorem-form" onSubmit={handleSubmit}>
+      <form className="lorem__form" onSubmit={handleSubmit}>
         <select name="type" id="type" value={type} onChange={handleChangeType}>
           <option value="paragraphs">Paragraphs</option>
           <option value="words">Words</option>
@@ -46,12 +45,13 @@ const LoremGenerator = () => {
           id="number"
           value={number}
           onChange={handleChange}
+          className="lorem__input"
         />
-        <button className="btn">Generate</button>
+        <button className="lorem__btn">Generate</button>
       </form>
-      <article className="lorem-text">
+      <div className="lorem__text">
         <p>{text}</p>
-      </article>
+      </div>
     </section>
   );
 };

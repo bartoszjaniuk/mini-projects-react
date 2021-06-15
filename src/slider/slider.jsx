@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import data from "./data";
 import { FaQuoteRight } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import "./slider.styles.scss";
-
 const Slider = () => {
   const [people, setPeople] = useState(data);
   const [index, setIndex] = useState(0);
@@ -23,13 +21,13 @@ const Slider = () => {
   };
 
   return (
-    <section className="section">
-      <div className="title">
+    <section className="slider__section">
+      <div className="slider__title">
         <h2>
           <span>/</span>reviews
         </h2>
       </div>
-      <div className="section-center">
+      <div className="slider__section-center">
         {people.map((person, personIndex) => {
           const { id, image, name, title, quote } = person;
 
@@ -46,16 +44,20 @@ const Slider = () => {
 
           return (
             <article className={position} key={id}>
-              <img src={image} alt={name} className="person-img-circle" />
+              <img
+                src={image}
+                alt={name}
+                className="slider__person-img-circle"
+              />
               <h4>{name}</h4>
-              <p className="title">{title}</p>
-              <p className="text">{quote}</p>
-              <FaQuoteRight className="icon" />
+              <p className="slider__title">{title}</p>
+              <p className="slider__text">{quote}</p>
+              <FaQuoteRight className="slider__icon" />
             </article>
           );
         })}
         <button
-          className="prev"
+          className="slider__prev"
           onClick={() => {
             if (index === 0) return setIndex(people.length - 1);
             else return setIndex(index - 1);
@@ -63,7 +65,7 @@ const Slider = () => {
         >
           <FiChevronLeft />
         </button>
-        <button className="next" onClick={() => nextSlide()}>
+        <button className="slider__next" onClick={() => nextSlide()}>
           <FiChevronRight />
         </button>
       </div>

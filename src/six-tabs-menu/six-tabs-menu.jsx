@@ -25,7 +25,7 @@ const SixTabsMenu = () => {
 
   if (loading) {
     return (
-      <section className="section loading">
+      <section className="six-tabs__section loading">
         <h1>⏳</h1>
       </section>
     );
@@ -34,33 +34,35 @@ const SixTabsMenu = () => {
   const { company, dates, duties, title } = jobs[value];
 
   return (
-    <section className="section">
-      <div className="title">
+    <section className="six-tabs__section">
+      <div className="six-tabs__title">
         <h2>expierence</h2>
-        <div className="underline"></div>
-        <div className="jobs-center">
+        <div className="six-tabs__underline"></div>
+        <div className="six-tabs__jobs-center">
           {/* {btn-container} */}
-          <div className="btn-container">
+          <div className="six-tabs__btn-container">
             {jobs.map((job, index) => {
               return (
                 <button
                   key={job.id}
                   onClick={() => setValue(index)}
-                  className={`job-btn ${index === value && "active-btn"}`}
+                  className={`six-tabs__job-btn ${
+                    index === value && "active-btn"
+                  }`}
                 >
                   {job.company}
                 </button>
               );
             })}
           </div>
-          <article className="job-info">
+          <article className="six-tabs__job-info">
             <h3>{title}</h3>
             <h4>{company}</h4>
-            <p className="job-date">{dates}</p>
+            <p className="six-tabs__job-date">{dates}</p>
             {duties.map((duty, index) => {
               return (
-                <div className="job-desc" key={index}>
-                  <FaAngleRight className="job-icon" />
+                <div className="six-tabs__job-desc" key={index}>
+                  <FaAngleRight className="six-tabs__job-icon" />
                   <p>{duty}</p>
                 </div>
               );

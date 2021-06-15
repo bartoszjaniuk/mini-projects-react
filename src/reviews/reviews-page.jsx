@@ -1,13 +1,14 @@
 import React from "react";
 import Review from "./review";
+import "./review.styles.scss";
 
 const ReviewsPage = () => {
   return (
-    <main>
-      <section className="container">
-        <div className="title">
+    <main className="review">
+      <section className="review__container ">
+        <div className="review__title">
           <h2>Our reviews</h2>
-          <div className="underline"></div>
+          <div className="review__underline"></div>
         </div>
         <Review />
       </section>

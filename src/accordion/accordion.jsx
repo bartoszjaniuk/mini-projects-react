@@ -15,7 +15,7 @@ const Accordion = () => {
     console.log(planets);
   }, []);
   return (
-    <main className="review">
+    <main className="main">
       <div className="container">
         <h3>Star Wars 🪐 from SWAPI </h3>
         <section className="info">

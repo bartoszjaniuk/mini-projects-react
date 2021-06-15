@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./review.styles.scss";
+// import "./review.styles.scss";
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
 
 const Review = () => {
@@ -26,13 +26,13 @@ const Review = () => {
 
   const nextSlide = () => {
     setIndex((index) => {
-      return index === people.length ? (index = 0) : index + 1;
+      return index === people.length - 1 ? (index = 0) : index + 1;
     });
   };
 
   const prevSlide = () => {
     setIndex((index) => {
-      return index === 0 ? (index = people.length) : index - 1;
+      return index === 0 ? (index = people.length - 1) : index - 1;
     });
   };
 
@@ -41,25 +41,25 @@ const Review = () => {
   }, []);
 
   return (
-    <article className="review">
-      <div className="img-container">
+    <article className="review__article">
+      <div className="review__img-container">
         <img
           src={people[index]?.image}
           alt={people[index]?.name}
-          className="person-img"
+          className="review__person-img"
         />
-        <span className="quote-icon">
+        <span className="review__quote-icon">
           <FaQuoteRight />
         </span>
       </div>
-      <h4 className="author">{people[index]?.name}</h4>
-      <p className="job">{people[index]?.website}</p>
-      <p className="info">{people[index]?.info}</p>
-      <div className="button-container">
-        <button className="prev-btn">
+      <h4 className="review__author">{people[index]?.name}</h4>
+      <p className="review__job">{people[index]?.website}</p>
+      <p className="review__info">{people[index]?.info}</p>
+      <div className="review__button-container">
+        <button className="review__prev-btn">
           <FaChevronLeft onClick={prevSlide} />
         </button>
-        <button className="next-btn">
+        <button className="review__next-btn">
           <FaChevronRight onClick={nextSlide} />
         </button>
       </div>

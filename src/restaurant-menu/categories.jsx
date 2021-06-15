@@ -9,10 +9,10 @@ const Categories = ({ filterItems, categories, searchItems }) => {
     console.log(e.target.value);
   };
   return (
-    <div className="btn-container">
+    <div className="menu__btn-container">
       {categories.map((category, index) => (
         <button
-          className="filter-btn"
+          className="menu__filter-btn"
           onClick={() => filterItems(category)}
           key={index}
         >
