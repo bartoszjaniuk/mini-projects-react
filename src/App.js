@@ -1,6 +1,7 @@
 import React from "react";
 import AccordionPage from "./accordion/accordion-page";
 import ColorGeneratorPage from "./color-generator/color-generator-page";
+import GroceryListPage from "./grocery-list/grocery-list-page";
 import LoremGeneratorPage from "./lorem-generator/lorem-generator-page";
 import RestaurantMenuPage from "./restaurant-menu/restaurant-menu-page";
 import ReviewsPage from "./reviews/reviews-page";
@@ -14,7 +15,8 @@ const App = () => {
   // return <SixTabsMenuPage />;
   // return <SliderPage />;
   // return <LoremGeneratorPage />;
-  return <ColorGeneratorPage />;
+  // return <ColorGeneratorPage />;
+  return <GroceryListPage />;
 };
 
 export default App;
