@@ -7,6 +7,7 @@ import RestaurantMenuPage from "./restaurant-menu/restaurant-menu-page";
 import ReviewsPage from "./reviews/reviews-page";
 import SixTabsMenuPage from "./six-tabs-menu/six-tabs-menu-page";
 import SliderPage from "./slider/slider-page";
+import NavbarPage from "./navbar/navbar-page";
 
 const App = () => {
   // return <ReviewsPage />;
@@ -16,7 +17,8 @@ const App = () => {
   // return <SliderPage />;
   // return <LoremGeneratorPage />;
   // return <ColorGeneratorPage />;
-  return <GroceryListPage />;
+  // return <GroceryListPage />;
+  return <NavbarPage />;
 };
 
 export default App;
