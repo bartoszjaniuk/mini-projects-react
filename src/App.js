@@ -8,6 +8,7 @@ import ReviewsPage from "./reviews/reviews-page";
 import SixTabsMenuPage from "./six-tabs-menu/six-tabs-menu-page";
 import SliderPage from "./slider/slider-page";
 import NavbarPage from "./navbar/navbar-page";
+import TasksTodoPage from "./tasks-todo-with-reducer/tasks-todo-page.jsx";
 
 const App = () => {
   // return <ReviewsPage />;
@@ -18,7 +19,8 @@ const App = () => {
   // return <LoremGeneratorPage />;
   // return <ColorGeneratorPage />;
   // return <GroceryListPage />;
-  return <NavbarPage />;
+  // return <NavbarPage />;
+  return <TasksTodoPage />;
 };
 
 export default App;
