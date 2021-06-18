@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer, useState, useEffect } from "react";
 import { AiOutlineClear } from "react-icons/ai";
 import Tasks from "./tasks";
 import {
@@ -7,6 +7,7 @@ import {
   clearTasks,
   removeTask,
   editTask,
+  loadTasks,
 } from "./tasks.actions";
 import Alert from "../grocery-list/alert";
 import { setAlert, removeTaskFromList, editTaskFromList } from "./tasks.utils";
@@ -48,6 +49,12 @@ const reducer = (state, action) => {
         alert: setAlert(true, "Task has been deleted 💣", "success"),
       };
 
+    case "LOAD_TASKS":
+      return {
+        ...state,
+        tasks: action.payload,
+      };
+
     case "NO_VALUE":
       return {
         ...state,
@@ -67,11 +74,24 @@ const reducer = (state, action) => {
       return state;
   }
 };
+const getLocalStorageList = () => {
+  let task = localStorage.getItem("tasks");
+  if (task) return JSON.parse(localStorage.getItem("tasks"));
+  return [];
+};
 
 const TasksTodo = () => {
   const [inputValue, setInputValue] = useState("");
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
   const [editingTaskID, setEditingTaskID] = useState(null);
+
+  useEffect(() => {
+    dispatch(loadTasks(getLocalStorageList()));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(state.tasks));
+  }, [state.tasks]);
 
   const editTaskFromList = (item) => {
     const taskToEdit = state.tasks.find(

@@ -20,3 +20,8 @@ export const removeTask = (task) => ({
   type: "REMOVE_TASK",
   payload: task,
 });
+
+export const loadTasks = (task) => ({
+  type: "LOAD_TASKS",
+  payload: task,
+});
