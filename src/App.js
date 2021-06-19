@@ -9,6 +9,8 @@ import SixTabsMenuPage from "./six-tabs-menu/six-tabs-menu-page";
 import SliderPage from "./slider/slider-page";
 import NavbarPage from "./navbar/navbar-page";
 import TasksTodoPage from "./tasks-todo-with-reducer/tasks-todo-page.jsx";
+import SidebarPage from "./sidebar/sidebar-page";
+import { AppProvider } from "./sidebar/context";
 
 const App = () => {
   // return <ReviewsPage />;
@@ -20,7 +22,13 @@ const App = () => {
   // return <ColorGeneratorPage />;
   // return <GroceryListPage />;
   // return <NavbarPage />;
-  return <TasksTodoPage />;
+  // return <TasksTodoPage />;
+
+  return (
+    <AppProvider>
+      <SidebarPage />
+    </AppProvider>
+  );
 };
 
 export default App;
