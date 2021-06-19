@@ -101,36 +101,37 @@ const TasksTodo = () => {
     setInputValue(taskToEdit.title);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (editingTaskID === null) {
+      if (inputValue) {
+        const newItem = {
+          id: new Date().getTime().toString(),
+          title: inputValue,
+        };
+        dispatch(addNewTask(newItem));
+        setInputValue("");
+      } else {
+        alert("Value cannot be empty!");
+      }
+    } else {
+      const editingItem = state.tasks.find((task) => task.id === editingTaskID);
+
+      const newItem = { ...editingItem, title: inputValue };
+
+      dispatch(editTask(newItem));
+      setInputValue("");
+      setEditingTaskID(null);
+    }
+  };
+
   const clearAllTasks = () => {
     dispatch(clearTasks());
   };
 
   const removeTaskFromList = (taskIdToRemove) => {
     dispatch(removeTask(taskIdToRemove));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (editingTaskID === null) {
-      const newItem = {
-        id: new Date().getTime().toString(),
-        title: inputValue,
-      };
-      dispatch(addNewTask(newItem));
-      setInputValue("");
-    } else {
-      const editingItem = state.tasks.find((task) => task.id === editingTaskID);
-      console.log("ITEM TO EDIT", editingItem);
-      const newItem = { ...editingItem, title: inputValue };
-      console.log("new item", newItem);
-      dispatch(editTask(newItem));
-      setInputValue("");
-      setEditingTaskID(null);
-    }
-
-    console.log("state.tasks", state.tasks);
-    console.log("...state.tasks", ...state.tasks);
   };
 
   const handleChange = (e) => {
