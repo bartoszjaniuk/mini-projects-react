@@ -1,4 +1,6 @@
 import React, { useContext, useState } from "react";
+
+// UTWORZENIE PROVIDERA
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {

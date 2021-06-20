@@ -11,6 +11,9 @@ import NavbarPage from "./navbar/navbar-page";
 import TasksTodoPage from "./tasks-todo-with-reducer/tasks-todo-page.jsx";
 import SidebarPage from "./sidebar/sidebar-page";
 import { AppProvider } from "./sidebar/context";
+import FetchExamplePage from "./fetch-example/fetch-example-page";
+import StripeSubmenuPage from "./stripe-submenu/stripe-submenu-page";
+import { SubmenuAppProvider } from "./stripe-submenu/context";
 
 const App = () => {
   // return <ReviewsPage />;
@@ -24,10 +27,17 @@ const App = () => {
   // return <NavbarPage />;
   // return <TasksTodoPage />;
 
+  // return (
+  //   <AppProvider>
+  //     <SidebarPage />
+  //   </AppProvider>
+  // );
+
+  // return <FetchExamplePage />;
   return (
-    <AppProvider>
-      <SidebarPage />
-    </AppProvider>
+    <SubmenuAppProvider>
+      <StripeSubmenuPage />
+    </SubmenuAppProvider>
   );
 };
 
