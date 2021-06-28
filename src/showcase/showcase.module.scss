@@ -1,0 +1,43 @@
+.showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 1300px;
+    height: auto;
+    gap: 3rem;
+  }
+}
+.card {
+  width: 350px;
+  border: 1px solid cadetblue;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  &__button {
+    width: 100%;
+    padding: 1rem 0;
+    border: transparent;
+    transform: translateY(0);
+    transition: all 0.4s ease-in-out;
+    background-color: rgb(52, 179, 184);
+    color: #fff;
+    &:active {
+      background-color: cadetblue;
+    }
+    &:hover {
+      background-color: rgb(79, 223, 228);
+    }
+
+    &__link {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
