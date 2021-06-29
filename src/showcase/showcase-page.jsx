@@ -1,4 +1,3 @@
-import { map } from "async";
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./showcase.module.scss";
@@ -17,6 +16,8 @@ const projectList = [
   { id: 11, name: "six-tabs-menu", url: "/six-tabs-menu" },
   { id: 12, name: "slider", url: "/slider" },
   { id: 13, name: "tasks-todo-with-reducer", url: "/tasks-todo-with-reducer" },
+  { id: 14, name: "memo", url: "/memo" },
+  { id: 15, name: "shopping-cart", url: "/cart" },
 ];
 
 const ShowcasePage = () => {

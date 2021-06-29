@@ -5,7 +5,6 @@ import GroceryListPage from "./grocery-list/grocery-list-page";
 import LoremGeneratorPage from "./lorem-generator/lorem-generator-page";
 import RestaurantMenuPage from "./restaurant-menu/restaurant-menu-page";
 import ReviewsPage from "./reviews/reviews-page";
-import SixTabsMenuPage from "./six-tabs-menu/six-tabs-menu-page";
 import SliderPage from "./slider/slider-page";
 import NavbarPage from "./navbar/navbar-page";
 import TasksTodoPage from "./tasks-todo-with-reducer/tasks-todo-page.jsx";
@@ -20,6 +19,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ErrorPage from "./showcase/error-page";
 import PeopleList from "./react-router/people-list";
 import Person from "./react-router/person";
+import MemoPage from "./memo/memo-page";
+import CartPage from "./cart/cart-page";
+import store from "./cart/redux/store";
+import { Provider } from "react-redux";
+import { CartProvider } from "./cart/context";
 
 const App = () => {
   return (
@@ -42,7 +46,16 @@ const App = () => {
           <Route path="/person/:id" children={Person} />
 
           <Route path="/restaurant-menu" component={RestaurantMenuPage} />
+          <Route path="/memo" component={MemoPage} />
           <Route path="/reviews" component={ReviewsPage} />
+          <Route
+            path="/cart"
+            render={() => (
+              <CartProvider>
+                <CartPage />
+              </CartProvider>
+            )}
+          />
           <Route
             path="/sidebar"
             render={() => (
