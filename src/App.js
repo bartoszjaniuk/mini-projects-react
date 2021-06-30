@@ -21,9 +21,10 @@ import PeopleList from "./react-router/people-list";
 import Person from "./react-router/person";
 import MemoPage from "./memo/memo-page";
 import CartPage from "./cart/cart-page";
-import store from "./cart/redux/store";
 import { Provider } from "react-redux";
 import { CartProvider } from "./cart/context";
+import CoctailsPage from "./coctails/coctails-page";
+import { coctailsStore } from "./coctails/redux/coctailsStore";
 
 const App = () => {
   return (
@@ -74,6 +75,14 @@ const App = () => {
           />
           <Route path="/slider" component={SliderPage} />
           <Route path="/tasks-todo-with-reducer" component={TasksTodoPage} />
+          <Route
+            path="/coctails"
+            render={() => (
+              <Provider store={coctailsStore}>
+                <CoctailsPage />
+              </Provider>
+            )}
+          />
           <Route path="*" component={ErrorPage} />
         </Switch>
       </Router>

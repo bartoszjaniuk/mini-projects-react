@@ -18,6 +18,7 @@ const projectList = [
   { id: 13, name: "tasks-todo-with-reducer", url: "/tasks-todo-with-reducer" },
   { id: 14, name: "memo", url: "/memo" },
   { id: 15, name: "shopping-cart", url: "/cart" },
+  { id: 16, name: "coctails", url: "/coctails" },
 ];
 
 const ShowcasePage = () => {
