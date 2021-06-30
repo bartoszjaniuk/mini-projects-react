@@ -12,13 +12,13 @@ export const navigationLinks = [
   },
   {
     id: 3,
-    url: "/contact",
-    text: "contact",
+    url: "/coctails",
+    text: "coctails",
   },
   {
     id: 4,
-    url: "/products",
-    text: "products",
+    url: "/shakes",
+    text: "shakes",
   },
 ];
 

@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { navigation } from "./links";
+
 import SocialIcons from "./social-icons";
 
-const logoUrl =
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/800px-React-icon.svg.png";
-const Navbar = () => {
+const Navbar = ({ navigationLinks, logoIcon, title }) => {
   const [showLinks, setShowLinks] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
@@ -18,9 +16,9 @@ const Navbar = () => {
       <div className="navbar__center">
         <div className="navbar__header">
           <div className="logo__container">
-            <img src={logoUrl} alt="logo" className="logo__img" />
+            <img src={logoIcon} alt="logo" className="logo__img" />
           </div>
-          <div className="logo__title">React Menu</div>
+          <div className="logo__title">{title}</div>
           <button
             className={`${isActive ? "hamburger active" : "hamburger"}`}
             onClick={toggleMenu}
@@ -32,7 +30,7 @@ const Navbar = () => {
         </div>
         <div className={`links-container ${isActive ? "active" : ""}`}>
           <ul className="links">
-            {navigation.map((link) => {
+            {navigationLinks.map((link) => {
               return (
                 <li className="item" key={link.id}>
                   <a href="#" className="link">
