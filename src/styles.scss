@@ -13,3 +13,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.page {
+  position: relative;
+}
+.to-home-btn {
+  position: absolute;
+  bottom: 0;
+}

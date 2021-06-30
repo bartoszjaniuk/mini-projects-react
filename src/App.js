@@ -28,9 +28,9 @@ import { coctailsStore } from "./coctails/redux/coctailsStore";
 
 const App = () => {
   return (
-    <>
+    <div className="page">
       <Router>
-        <button>
+        <button className="to-home-btn">
           <Link to="/">🏠</Link>
         </button>
         <Switch>
@@ -86,7 +86,7 @@ const App = () => {
           <Route path="*" component={ErrorPage} />
         </Switch>
       </Router>
-    </>
+    </div>
   );
 };
 
