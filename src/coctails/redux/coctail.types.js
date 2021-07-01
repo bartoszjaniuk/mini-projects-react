@@ -1,3 +1,6 @@
 export const CoctailActionTypes = {
   ACTION: "ACTION",
+  SET_SEARCH: "SET_SEARCH",
+  SET_LOADING: "SET_LOADING",
+  SET_COCTAILS: "SET_COCTAILS",
 };
