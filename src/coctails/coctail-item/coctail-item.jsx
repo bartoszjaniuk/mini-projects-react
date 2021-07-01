@@ -30,17 +30,3 @@ const CoctailItem = ({ name, image, glass, info }) => {
 };
 
 export default CoctailItem;
-
-{
-  /* <div className={styles.card}>
-<div className={styles.card__header}>
-  <span>{name}</span>
-  <span>{info}</span>
-  <span>{glass}</span>
-  <button>DETAILS</button>
-</div>
-<div className={styles.card__img}>
-  <img src={image} alt={name} className={styles.card__img__inner} />
-</div>
-</div> */
-}

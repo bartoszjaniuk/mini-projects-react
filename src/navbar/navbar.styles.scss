@@ -4,7 +4,7 @@ body {
 
 .logo {
   &__container {
-    width: 60px;
+    width: 50px;
   }
 
   &__img {
@@ -37,7 +37,7 @@ body {
 }
 
 .link {
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-transform: capitalize;
   letter-spacing: 2px;
   display: block;
@@ -57,6 +57,10 @@ body {
 
 .links {
   text-align: center;
+}
+
+.links-container {
+  padding-top: 0.7rem;
 }
 
 .item {
