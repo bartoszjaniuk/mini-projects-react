@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styles from "./search.module.scss";
 import { AiOutlineSearch } from "react-icons/ai";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { CoctailActionTypes } from "../redux/coctail.types";
 
 const Search = () => {
-  // const [searchingTerm, setSearchingTerm] = useState(initialState)
-  const { searchingValue } = useSelector((state) => state.coctail);
+  const dispatch = useDispatch();
+  const searchValue = useRef("");
+  const handleChange = (e) => {
+    dispatch({ type: CoctailActionTypes.SET_SEARCH, payload: e.target.value });
+  };
+
+  useEffect(() => {
+    searchValue.current.focus();
+  }, []);
   return (
     <div className={styles.search}>
-      <input className={styles.search__input} type="text" />
+      <input
+        className={styles.search__input}
+        type="text"
+        onChange={handleChange}
+        ref={searchValue}
+      />
       <AiOutlineSearch className={styles.search__icon} />
     </div>
   );
