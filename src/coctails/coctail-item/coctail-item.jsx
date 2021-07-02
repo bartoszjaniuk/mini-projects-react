@@ -1,9 +1,20 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { CoctailActionTypes } from "../redux/coctail.types";
 import styles from "./coctail.module.scss";
 
-const CoctailItem = ({ name, image, glass, info }) => {
+const CoctailItem = ({ id, name, image, glass, info }) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
   return (
-    <div className={styles.card2}>
+    <div
+      className={styles.card2}
+      onClick={() => {
+        dispatch({ type: CoctailActionTypes.SET_COCTAIL_ID, payload: id });
+        history.push(`/coctail/${id}`);
+      }}
+    >
       <div className={styles.card2__containerIMG}>
         <img
           src={image}

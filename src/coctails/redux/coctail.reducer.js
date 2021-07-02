@@ -3,6 +3,7 @@ const INITIAL_STATE = {
   loading: false,
   searchingValue: "",
   coctails: [],
+  coctailId: null,
 };
 
 const coctailReducer = (state = INITIAL_STATE, { type, payload }) => {
@@ -22,6 +23,11 @@ const coctailReducer = (state = INITIAL_STATE, { type, payload }) => {
         ...state,
         coctails: payload,
         loading: false,
+      };
+    case CoctailActionTypes.SET_COCTAIL_ID:
+      return {
+        ...state,
+        coctailId: payload,
       };
     default:
       return state;

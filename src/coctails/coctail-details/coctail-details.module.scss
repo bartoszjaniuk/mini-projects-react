@@ -1,0 +1,39 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  box-shadow: 0px 0px 5px rgb(224, 224, 224);
+  border-radius: 5px;
+}
+
+.coctail {
+  box-shadow: 0px 0px 10px rgba(158, 77, 77, 0.219);
+  width: 500px;
+  // height: 400px;
+  display: flex;
+  justify-content: space-around;
+
+  &__imgContainer {
+    width: 100%;
+  }
+  &__detailsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.img {
+  width: 100%;
+}
+
+.left,
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
