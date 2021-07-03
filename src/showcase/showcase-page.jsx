@@ -24,21 +24,19 @@ const projectList = [
 const ShowcasePage = () => {
   return (
     <div className={styles.showcase}>
-      <div className={styles.showcase__container}>
-        {projectList.map((project) => {
-          const { id, name, url } = project;
-          return (
-            <div className={styles.card} key={id}>
-              <p className={styles.card__name}>{name}</p>
-              <button className={styles.card__button}>
-                <Link className={styles.card__button__link} to={url}>
-                  GO TO PROJECT
-                </Link>
-              </button>
-            </div>
-          );
-        })}
-      </div>
+      {projectList.map((project) => {
+        const { id, name, url } = project;
+        return (
+          <div className={styles.card} key={id}>
+            <p className={styles.card__name}>{name}</p>
+            <button className={styles.card__button}>
+              <Link className={styles.card__button__link} to={url}>
+                GO TO PROJECT
+              </Link>
+            </button>
+          </div>
+        );
+      })}
     </div>
   );
 };
